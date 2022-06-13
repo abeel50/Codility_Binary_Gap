@@ -19,11 +19,9 @@ def findGaps(N, gaps):
 
 def solution(N):
     # write your code in Python 3.6
-    if N % 2 == 0:
-        return 0
     n_bin = bin(N)[2:]
-    if n_bin.count('0') == 0 :
-        return 0
+    if n_bin.count('0') == 0 or n_bin.count('1') == 1:
+            return 0
     gaps = findGaps(n_bin,[])
     if len(gaps) > 0:
         return max(gaps)
